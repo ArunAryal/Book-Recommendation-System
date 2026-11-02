@@ -87,8 +87,8 @@ The title must exactly match an entry in the pivot table's index (one of the 706
 
 ```bash
 # 1. Clone the repository and move into it
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/ArunAryal/Book-Recommendation-System
+cd Book-Recommendation-System
 
 # 2. Install dependencies
 pip install pandas numpy scikit-learn jupyter
@@ -105,10 +105,3 @@ jupyter notebook BookRecommendationSystem.ipynb
 - Popularity ranking uses the mean of all ratings, including `0`s, so averages are lower than the usual 1-10 scale would suggest.
 - The recommender only covers the 706 books that pass the filtering thresholds; other titles raise an error in `recommend()`.
 - Similarity is item-based on titles only, so different editions of the same book are merged in the collaborative filtering step.
-
-## Possible Next Steps
-
-- Treat explicit ratings (1-10) separately from implicit interactions (0).
-- Save `pt` and `similarity_score` with `pickle` so they do not need to be rebuilt.
-- Add a fuzzy title search so `recommend()` tolerates typos.
-- Wrap the recommenders in a small web app (for example Streamlit or FastAPI) with book covers from `Image-URL-M`.
